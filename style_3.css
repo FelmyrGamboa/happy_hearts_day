@@ -1,0 +1,561 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to top, #4857dc, #ff8c00c8);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.night {
+    position: fixed;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    filter: blur(0.1vmin);
+    background-image: radial-gradient(ellipse at top, transparent 0%, #000), radial-gradient(ellipse at bottom, #000, rgba(145, 233, 255, 0.2)), repeating-linear-gradient(220deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(189deg, black 0px, black 19px, transparent 19px, transparent 22px), repeating-linear-gradient(148deg, black 0px, black 19px, transparent 19px, transparent 22px), linear-gradient(90deg, #00fffa, #f0f0f0);
+    opacity: 0.5;
+  }
+
+
+.grass{
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -330px;
+}
+
+.grass img {
+    width: 100%;
+    height: 20%;
+}
+
+.flower{
+    position: relative;
+    animation: grow 4s ease forwards;
+    transform-origin: bottom;
+}
+
+.flower_wrapper{
+    position: absolute;
+    left: 45%;
+    bottom: 2vmin;
+    animation: move_flower 3s linear infinite;
+}
+
+@keyframes move_flower{
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    25%{
+        transform: rotate(1deg);
+    }
+
+    50%{
+        transform: rotate(0deg);
+    }
+
+    75%{
+        transform: rotate(-1deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.flower_line{
+    width: 2vmin;
+    height: 56vmin;
+    background: linear-gradient(to left top, #82ff86 20%, #144425, #104e1c);
+    border-radius: 4vmin;
+}
+
+.flower_center{
+    position: absolute;
+    top: 2vmin;
+    border-radius: 50%;
+    width: 2vmin;
+    height: 3vmin;
+    background-color: brown;
+}
+
+.flower_leaf{
+    position: absolute;
+    left: 50%;
+    bottom: 2vmin;
+    transform: translateX(-50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #ffe785, #faf573, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    animation: bloom 2s 1s backwards;
+}
+
+@keyframes bloom{
+    0%{
+        transform: translateX(-50%) rotate(0);
+    }
+}
+
+.flower_leaf_1{
+    width: 10vmin;
+    height: 12vmin;
+    bottom: 3vmin;
+    border-radius: 50% 50% 50% / 50% 50% 20% 20%;
+    background-color: #686116;
+    background-image: none;
+}
+
+.flower_leaf_2{
+    transform: translateX(-50%) rotate(-30deg);
+}
+
+.flower_leaf_3{
+    transform: translateX(-50%) rotate(-50deg);
+}
+
+.flower_leaf_4{
+    transform: translateX(-50%) rotate(-70deg);
+}
+
+.flower_leaf_5{
+    transform: translateX(-50%) rotate(30deg);
+}
+
+.flower_leaf_6{
+    transform: translateX(-50%) rotate(50deg);
+}
+
+.flower_leaf_7{
+    transform: translateX(-50%) rotate(70deg);
+}
+
+.flower_leaf_8{
+    transform: translateX(-50%) rotate(0deg);
+}
+
+@keyframes grow {
+    0%{ 
+        transform: scale(0);
+    } 
+}
+
+.stem_leaf_1{
+    position: absolute;
+    left: -80%;
+    top: 5vmin;
+    transform: translateX(-50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #bcff85, #73fa7e, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(-30deg);
+    animation: move_leaf_1 5s linear infinite;
+}
+
+@keyframes move_leaf_1{
+    0%{
+        transform: rotate(-30deg);
+    }
+    
+    25%{
+        transform: rotate(-40deg);
+    }
+
+    50%{
+        transform: rotate(-30deg);
+    }
+
+    75%{
+        transform: rotate(-40deg);
+    }
+
+    100%{
+        transform: rotate(-30deg);
+    }
+}
+
+
+.stem_leaf_2{
+    position: absolute;
+    left: -30%;
+    top: 20vmin;
+    transform: translateX(50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #bcff85, #73fa7e, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(30deg);
+    animation: move_leaf_2 5s linear infinite;
+}
+
+@keyframes move_leaf_2{
+    0%{
+        transform: rotate(30deg);
+    }
+    
+    25%{
+        transform: rotate(40deg);
+    }
+
+    50%{
+        transform: rotate(30deg);
+    }
+
+    75%{
+        transform: rotate(40deg);
+    }
+
+    100%{
+        transform: rotate(30deg);
+    }
+}
+
+.flower_2{
+    position: relative;
+    left: 120px;
+    opacity: 0;
+    animation: grow_2 4s ease 2s forwards;
+    transform-origin: bottom;
+}
+
+@keyframes grow_2 {
+    0%{ 
+        opacity: 1;
+        transform:rotate(4deg) scale(0);
+    } 
+
+    100%{
+        opacity: 1;
+        transform: rotate(4deg) scale(1);
+    }
+}
+
+.flower_wrapper_2{
+    position: absolute;
+    left: 45%;
+    bottom: 2vmin;
+    animation: move_flower_2 3s linear 2s infinite;
+}
+
+@keyframes move_flower_2{
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    25%{
+        transform: rotate(1deg);
+    }
+
+    50%{
+        transform: rotate(0deg);
+    }
+
+    75%{
+        transform: rotate(-1deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.flower_line_2{
+    width: 2vmin;
+    height: 45vmin;
+    background: linear-gradient(to left top, #82ff86 20%, #144425, #104e1c);
+    border-radius: 4vmin;
+}
+
+.flower_center_2{
+    position: absolute;
+    top: 2vmin;
+    border-radius: 50%;
+    width: 2vmin;
+    height: 3vmin;
+    background-color: brown;
+}
+
+.flower2_leaf{
+    position: absolute;
+    left: 50%;
+    bottom: 2vmin;
+    transform: translateX(-50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #ff8585, #fabd73, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    animation: bloom 2s 3s backwards;
+}
+
+.flower2_leaf_1{
+    width: 10vmin;
+    height: 12vmin;
+    bottom: 3vmin;
+    border-radius: 50% 50% 50% / 50% 50% 20% 20%;
+    background-color: #686116;
+    background-image: none;
+}
+
+.flower2_leaf_2{
+    transform: translateX(-50%) rotate(-30deg);
+}
+
+.flower2_leaf_3{
+    transform: translateX(-50%) rotate(-50deg);
+}
+
+.flower2_leaf_4{
+    transform: translateX(-50%) rotate(-70deg);
+}
+
+.flower2_leaf_5{
+    transform: translateX(-50%) rotate(30deg);
+}
+
+.flower2_leaf_6{
+    transform: translateX(-50%) rotate(50deg);
+}
+
+.flower2_leaf_7{
+    transform: translateX(-50%) rotate(70deg);
+}
+
+.flower2_leaf_8{
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.stem2_leaf_1{
+    position: absolute;
+    left: -80%;
+    top: 5vmin;
+    transform: translateX(-50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #bcff85, #73fa7e, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(-30deg);
+    animation: move_leaf_1 5s linear infinite;
+}
+
+@keyframes move_leaf_1{
+    0%{
+        transform: rotate(-30deg);
+    }
+    
+    25%{
+        transform: rotate(-40deg);
+    }
+
+    50%{
+        transform: rotate(-30deg);
+    }
+
+    75%{
+        transform: rotate(-40deg);
+    }
+
+    100%{
+        transform: rotate(-30deg);
+    }
+}
+
+.stem2_leaf_2{
+    position: absolute;
+    left: -30%;
+    top: 0vmin;
+    transform: translateX(50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #bcff85, #73fa7e, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(30deg);
+    animation: move2_leaf_2 5s linear infinite;
+}
+
+@keyframes move2_leaf_2{
+    0%{
+        transform: rotate(30deg);
+    }
+    
+    25%{
+        transform: rotate(40deg);
+    }
+
+    50%{
+        transform: rotate(30deg);
+    }
+
+    75%{
+        transform: rotate(40deg);
+    }
+
+    100%{
+        transform: rotate(30deg);
+    }
+}
+
+.flower_3{
+    position: relative;
+    left: -130px;
+    opacity: 0;
+    animation: grow_3 4s ease 2s forwards;
+    transform-origin: bottom;
+}
+
+@keyframes grow_3 {
+    0%{ 
+        opacity: 1;
+        transform:rotate(-4deg) scale(0);
+    } 
+
+    100%{
+        opacity: 1;
+        transform: rotate(-4deg) scale(1);
+    }
+}
+
+.flower_wrapper_3{
+    position: absolute;
+    left: 45%;
+    bottom: 2vmin;
+    animation: move_flower 3s linear 1s infinite;
+}
+
+.flower_line_3{
+    width: 2vmin;
+    height: 45vmin;
+    background: linear-gradient(to left top, #82ff86 20%, #144425, #104e1c);
+    border-radius: 4vmin;
+}
+
+.flower_center_3{
+    position: absolute;
+    top: 2vmin;
+    border-radius: 50%;
+    width: 2vmin;
+    height: 3vmin;
+    background-color: brown;
+}
+
+.flower3_leaf{
+    position: absolute;
+    left: 50%;
+    bottom: 2vmin;
+    transform: translateX(-50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #cc85ff, #737cfa, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    animation: bloom 2s 4s backwards;
+}
+
+.flower3_leaf_1{
+    width: 10vmin;
+    height: 12vmin;
+    bottom: 3vmin;
+    border-radius: 50% 50% 50% / 50% 50% 20% 20%;
+    background-color: #686116;
+    background-image: none;
+}
+
+.flower3_leaf_2{
+    transform: translateX(-50%) rotate(-30deg);
+}
+
+.flower3_leaf_3{
+    transform: translateX(-50%) rotate(-50deg);
+}
+
+.flower3_leaf_4{
+    transform: translateX(-50%) rotate(-70deg);
+}
+
+.flower3_leaf_5{
+    transform: translateX(-50%) rotate(30deg);
+}
+
+.flower3_leaf_6{
+    transform: translateX(-50%) rotate(50deg);
+}
+
+.flower3_leaf_7{
+    transform: translateX(-50%) rotate(70deg);
+}
+
+.flower3_leaf_8{
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.stem3_leaf_1{
+    position: absolute;
+    left: -80%;
+    top: 10vmin;
+    transform: translateX(-50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #bcff85, #73fa7e, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(-30deg);
+    animation: move_leaf_1 5s linear infinite;
+}
+
+.stem3_leaf_2{
+    position: absolute;
+    left: -50%;
+    top: 10vmin;
+    transform: translateX(50%);
+    width: 5vmin;
+    height: 14vmin;
+    background: linear-gradient(to bottom, #bcff85, #73fa7e, #1a233a 99%);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(-30deg);
+    animation: move_leaf_2 5s linear infinite;
+}
+
+@media (max-width: 1400px) {
+    .grass{
+        bottom: -250px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .grass{
+        bottom: -150px;
+        width: 100%;
+    }
+}
+
+@media(max-width: 900px) {
+    .grass{
+        bottom: -100px;
+        width: 100%;
+    }
+}
+
+@media(max-width: 400px) {
+    .grass{
+        bottom: -50px;
+        width: 100%;
+    }
+}

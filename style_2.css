@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+body{
+    background-color: white;
+    overflow: hidden;
+}
+
+.banana_cat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: running_near 10s ease forwards;
+}
+
+.banana_cat img{
+    height: 70px;
+    width: 30px;
+}
+
+@keyframes running_near {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    100% {
+        transform: scale(5) translateY(32px);
+    }
+}
+
+.banana_cat_standing{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 150px 0 0 0;
+}
+
+.banana_cat_standing img{
+    height: 120px;
+    width: 50px;
+    transform: scale(3);
+}
+
+.textbox{
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 30%; 
+    left: 40%;
+    transform: translate(-50%, -50%); 
+    animation: fade_in 2s ease-in-out forwards;
+    text-align: center;
+}
+
+.textbox img{
+    height: 280px;
+    width: 550px;
+}
+
+@keyframes fade_in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.text_details{
+    height: 150px;
+    width: 410px;
+    position: absolute;
+    display: inline-block;
+    transform: rotate(-3deg);
+    font-size: 24px;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    right: 100px;
+    bottom: 95px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.banana_cat_heart{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 150px 0 0 0;
+}
+
+.banana_cat_heart img{
+    height: 110px;
+    width: 50px;
+    transform: scale(3);
+}
+
+.envelope_container {
+    position: absolute;
+    display: none;
+    place-items: center;
+    top: 85%; 
+    left: 43%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    animation: fade_appear 2s ease forwards;
+  }
+
+@keyframes fade_appear{
+    0%{
+        opacity: 0;
+    }
+    
+    100%{
+        opacity: 1;
+    }
+}
+
+.envelope_container > .envelope_wrapper {
+    background: #f5edd1;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    z-index: inherit;
+}
+
+.envelope_wrapper > .envelope {
+    position: relative;
+    width: 150px;
+    height: 100px;
+}
+
+.envelope_wrapper > .envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-top: 61px solid #ecdeb8;
+    border-right: 76px solid transparent;
+    border-left: 75px solid transparent;
+    transform-origin: top;
+    transition: all 0.5s ease-in-out 0.7s;
+}
+
+.envelope_wrapper > .envelope::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    border-top: 61px solid transparent;
+    border-right: 76px solid #e6cfa7;
+    border-bottom: 40px solid #e6cfa7;
+    border-left: 75px solid #e6cfa7;
+    top: 0px;
+}
+
+.envelope > .letter {
+    position: absolute;
+    right: 16%;
+    bottom: 0;
+    width: 54%;
+    height: 55%;
+    background: rgb(245, 220, 224);
+    text-align: center;
+    transition: all 1s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px 10px;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text img {
+    object-fit: cover;
+    width: 54%;
+    height: 55%;
+}
+  
+.envelope > .letter > .text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #444;
+    text-align: left;
+    font-size: 10px;
+}
+
+.envelope_wrapper > .heart {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: #f20044;
+    z-index: 4;
+    transform: translate(-50%, -20%) rotate(45deg);
+    transition: transform 0.5s ease-in-out 1s;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.heart:before, 
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #f20044;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -7.5px;
+}
+
+.heart:after {
+    right: 7.5px;
+}
+
+.flap > .envelope:before {
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.flap > .envelope > .letter {
+    bottom: 100px;
+    transition-delay: 1s;
+    animation: zoom_letter 2s ease 2s forwards;
+}
+
+.flap > .heart {
+    transform: rotate(90deg);
+    transition-delay: 0.4s;
+} 
+
+@keyframes zoom_letter{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(20);
+    }
+}
+
+@media (max-height: 1400px) {
+    .envelope_container{
+        top: 70%;
+        left: 43%;
+    }
+}
+
+@media (max-height: 1100px) {
+    .envelope_container{
+        top: 75%;
+        left: 43%;
+    }
+}
+
+@media (max-height: 648px) {
+    .banana_cat_standing{
+        padding: 150px 0 0 0;
+    }
+
+    .textbox{
+        top: 23%; 
+        left: 45%;
+    }
+    
+    .textbox img{
+        height: 280px;
+        width: 450px;
+    }
+
+    .text_details{
+        height: 150px;
+        width: 330px;
+        transform: rotate(-3deg);
+        font-size: 24px;
+        right: 80px;
+        bottom: 95px;
+    }
+}
+
+@media (max-height: 900px) {
+    .envelope_container{
+        top: 85%;
+        left: 43%;
+    }
+}
+
+@media(max-width: 900px) {
+    .banana_cat_standing{
+        padding: 150px 0 0 0;
+    }
+
+    .textbox{
+        top: 23%; 
+        left: 45%;
+    }
+    
+    .textbox img{
+        height: 280px;
+        width: 450px;
+    }
+
+    .text_details{
+        height: 150px;
+        width: 330px;
+        position: absolute;
+        display: inline-block;
+        transform: rotate(-3deg);
+        font-size: 24px;
+        right: 80px;
+        bottom: 95px;
+    }
+
+    .envelope_container{
+        top: 70%;
+        left: 40%;
+    }
+}
+
+@media(max-width: 500px) {
+    .banana_cat_standing{
+        padding: 150px 0 0 0;
+    }
+
+    .textbox{
+        top: 28%; 
+        left: 42%;
+    }
+    
+    .textbox img{
+        height: 220px;
+        width: 350px;
+    }
+
+    .text_details{
+        height: 115px;
+        width: 260px;
+        position: absolute;
+        display: inline-block;
+        transform: rotate(-3deg);
+        font-size: 18px;
+        right: 60px;
+        bottom: 75px;
+    }
+
+    .envelope_container{
+        top: 85%;
+        left: 33%;
+    }
+    .envelope_wrapper > .envelope {
+        position: relative;
+        width: 100px;
+        height: 70px;
+    }
+    
+    .envelope_wrapper > .envelope::before {
+        border-top: 30px solid #ecdeb8;
+        border-right: 50px solid transparent;
+        border-left: 51px solid transparent;
+    }
+    
+    .envelope_wrapper > .envelope::after {
+        border-top: 30px solid transparent;
+        border-right: 50px solid #e6cfa7;
+        border-bottom: 50px solid #e6cfa7;
+        border-left: 51px solid #e6cfa7;
+    }
+    
+    .envelope > .letter {
+        width: 34%;
+        height: 35%;
+    }
+}
+
+@media(max-width: 400px) {
+    .banana_cat_standing{
+        padding: 130px 0 0 120px;
+    }
+
+    .textbox{
+        top: 28%; 
+        left: 42%;
+    }
+    
+    .textbox img{
+        height: 200px;
+        width: 260px;
+    }
+
+    .text_details{
+        height: 100px;
+        width: 200px;
+        position: absolute;
+        display: inline-block;
+        transform: rotate(-3deg);
+        font-size: 15px;
+        right: 42px;
+        bottom: 70px;
+    }
+
+    .envelope_container{
+        top: 85%;
+        left: 33%;
+    }
+    .envelope_wrapper > .envelope {
+        position: relative;
+        width: 100px;
+        height: 70px;
+    }
+    
+    .envelope_wrapper > .envelope::before {
+        border-top: 30px solid #ecdeb8;
+        border-right: 50px solid transparent;
+        border-left: 51px solid transparent;
+    }
+    
+    .envelope_wrapper > .envelope::after {
+        border-top: 30px solid transparent;
+        border-right: 50px solid #e6cfa7;
+        border-bottom: 50px solid #e6cfa7;
+        border-left: 51px solid #e6cfa7;
+    }
+    
+    .envelope > .letter {
+        width: 34%;
+        height: 35%;
+    }
+}

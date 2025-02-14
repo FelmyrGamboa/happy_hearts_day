@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.loading{
+    position: relative;
+    animation: loading 3s ease-in-out 3;
+}
+
+.outer_heart{
+    height: 30px;
+    width: 30px;
+    background-color: #f20044;
+    position: relative;
+    transform: rotate(45deg);
+}
+
+.outer_heart::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f20044;
+    top: -50%;
+    left: 0;
+}
+
+.outer_heart::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f20044;
+    left: -50%;
+    top: 0;
+}
+
+.inner_heart{
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+}
+
+.inner_heart::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    top: -50%;
+    left: 0;
+}
+
+.inner_heart::after{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    left: -50%;
+    top: 0;
+}
+
+.inner_heart_2{
+    height: 20px;
+    width: 20px;
+    background-color: #f20044;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+}
+
+.inner_heart_2::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f20044;
+    top: -50%;
+    left: 0;
+}
+
+.inner_heart_2::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f20044;
+    left: -50%;
+    top: 0;
+}
+
+.last_heart{
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+}
+
+.last_heart::before{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    top: -50%;
+    left: 0;
+}
+
+.last_heart::after{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    left: -50%;
+    top: 0;
+}
+
+@keyframes loading{
+    0%{
+        transform:rotate(-45deg);
+    }
+    
+    20%{
+        transform: rotate(90deg);
+    }
+
+    40%{
+        transform: rotate(-90deg);
+    }
+
+    60%{
+        transform: rotate(90deg);
+    }
+
+    100%{
+        transform: rotate(-405deg);
+    }
+}
+
+.enlarge_heart {
+    animation: enlargement 1s ease forwards;
+}
+
+@keyframes enlargement {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(135);
+    }
+}
